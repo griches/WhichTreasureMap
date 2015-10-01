@@ -6,13 +6,13 @@
 //  Copyright (c) 2015 Gary Riches. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "TreasureMapViewController.h"
 
-@interface ViewController ()
+@interface TreasureMapViewController ()
 
 @end
 
-@implementation ViewController
+@implementation TreasureMapViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

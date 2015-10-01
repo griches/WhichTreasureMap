@@ -10,7 +10,7 @@
 		B181AD021BBD2748001A1E9B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B181AD011BBD2748001A1E9B /* main.m */; };
 		B181AD051BBD2748001A1E9B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B181AD041BBD2748001A1E9B /* AppDelegate.m */; };
 		B181AD081BBD2748001A1E9B /* whichTreasureMap.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B181AD061BBD2748001A1E9B /* whichTreasureMap.xcdatamodeld */; };
-		B181AD0B1BBD2748001A1E9B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B181AD0A1BBD2748001A1E9B /* ViewController.m */; };
+		B181AD0B1BBD2748001A1E9B /* TreasureMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B181AD0A1BBD2748001A1E9B /* TreasureMapViewController.m */; };
 		B181AD0E1BBD2748001A1E9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B181AD0C1BBD2748001A1E9B /* Main.storyboard */; };
 		B181AD101BBD2748001A1E9B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B181AD0F1BBD2748001A1E9B /* Images.xcassets */; };
 		B181AD131BBD2748001A1E9B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B181AD111BBD2748001A1E9B /* LaunchScreen.xib */; };
@@ -34,8 +34,8 @@
 		B181AD031BBD2748001A1E9B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B181AD041BBD2748001A1E9B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B181AD071BBD2748001A1E9B /* whichTreasureMap.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = whichTreasureMap.xcdatamodel; sourceTree = "<group>"; };
-		B181AD091BBD2748001A1E9B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		B181AD0A1BBD2748001A1E9B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		B181AD091BBD2748001A1E9B /* TreasureMapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TreasureMapViewController.h; sourceTree = "<group>"; };
+		B181AD0A1BBD2748001A1E9B /* TreasureMapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TreasureMapViewController.m; sourceTree = "<group>"; };
 		B181AD0D1BBD2748001A1E9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B181AD0F1BBD2748001A1E9B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B181AD121BBD2748001A1E9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -85,8 +85,8 @@
 			children = (
 				B181AD031BBD2748001A1E9B /* AppDelegate.h */,
 				B181AD041BBD2748001A1E9B /* AppDelegate.m */,
-				B181AD091BBD2748001A1E9B /* ViewController.h */,
-				B181AD0A1BBD2748001A1E9B /* ViewController.m */,
+				B181AD091BBD2748001A1E9B /* TreasureMapViewController.h */,
+				B181AD0A1BBD2748001A1E9B /* TreasureMapViewController.m */,
 				B181AD0C1BBD2748001A1E9B /* Main.storyboard */,
 				B181AD0F1BBD2748001A1E9B /* Images.xcassets */,
 				B181AD111BBD2748001A1E9B /* LaunchScreen.xib */,
@@ -224,7 +224,7 @@
 			files = (
 				B181AD081BBD2748001A1E9B /* whichTreasureMap.xcdatamodeld in Sources */,
 				B181AD051BBD2748001A1E9B /* AppDelegate.m in Sources */,
-				B181AD0B1BBD2748001A1E9B /* ViewController.m in Sources */,
+				B181AD0B1BBD2748001A1E9B /* TreasureMapViewController.m in Sources */,
 				B181AD021BBD2748001A1E9B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
