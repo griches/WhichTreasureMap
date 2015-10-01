@@ -85,12 +85,11 @@
 			children = (
 				B181AD031BBD2748001A1E9B /* AppDelegate.h */,
 				B181AD041BBD2748001A1E9B /* AppDelegate.m */,
-				B181AD091BBD2748001A1E9B /* TreasureMapViewController.h */,
-				B181AD0A1BBD2748001A1E9B /* TreasureMapViewController.m */,
-				B181AD0C1BBD2748001A1E9B /* Main.storyboard */,
-				B181AD0F1BBD2748001A1E9B /* Images.xcassets */,
-				B181AD111BBD2748001A1E9B /* LaunchScreen.xib */,
-				B181AD061BBD2748001A1E9B /* whichTreasureMap.xcdatamodeld */,
+				B181AD2C1BBD2B66001A1E9B /* Download manager */,
+				B181AD281BBD2AC6001A1E9B /* View controllers */,
+				B181AD291BBD2ACE001A1E9B /* Interface */,
+				B181AD2A1BBD2AE8001A1E9B /* Assets */,
+				B181AD2B1BBD2AF0001A1E9B /* CoreData */,
 				B181ACFF1BBD2748001A1E9B /* Supporting Files */,
 			);
 			path = whichTreasureMap;
@@ -120,6 +119,47 @@
 				B181AD1D1BBD2748001A1E9B /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B181AD281BBD2AC6001A1E9B /* View controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B181AD091BBD2748001A1E9B /* TreasureMapViewController.h */,
+				B181AD0A1BBD2748001A1E9B /* TreasureMapViewController.m */,
+			);
+			name = "View controllers";
+			sourceTree = "<group>";
+		};
+		B181AD291BBD2ACE001A1E9B /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				B181AD0C1BBD2748001A1E9B /* Main.storyboard */,
+				B181AD111BBD2748001A1E9B /* LaunchScreen.xib */,
+			);
+			name = Interface;
+			sourceTree = "<group>";
+		};
+		B181AD2A1BBD2AE8001A1E9B /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				B181AD0F1BBD2748001A1E9B /* Images.xcassets */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		B181AD2B1BBD2AF0001A1E9B /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				B181AD061BBD2748001A1E9B /* whichTreasureMap.xcdatamodeld */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
+		B181AD2C1BBD2B66001A1E9B /* Download manager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Download manager";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
