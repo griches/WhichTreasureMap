@@ -17,6 +17,7 @@
 		B181AD1F1BBD2748001A1E9B /* whichTreasureMapTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B181AD1E1BBD2748001A1E9B /* whichTreasureMapTests.m */; };
 		B181AD2F1BBD2BBC001A1E9B /* DownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B181AD2E1BBD2BBC001A1E9B /* DownloadManager.m */; };
 		B181AD351BBD3021001A1E9B /* DirectionManagedObjectContext.m in Sources */ = {isa = PBXBuildFile; fileRef = B181AD341BBD3021001A1E9B /* DirectionManagedObjectContext.m */; };
+		B181AD391BBD3915001A1E9B /* NavigationCAShapeLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B181AD381BBD3915001A1E9B /* NavigationCAShapeLayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,8 @@
 		B181AD2E1BBD2BBC001A1E9B /* DownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadManager.m; sourceTree = "<group>"; };
 		B181AD331BBD3021001A1E9B /* DirectionManagedObjectContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectionManagedObjectContext.h; sourceTree = "<group>"; };
 		B181AD341BBD3021001A1E9B /* DirectionManagedObjectContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DirectionManagedObjectContext.m; sourceTree = "<group>"; };
+		B181AD371BBD3915001A1E9B /* NavigationCAShapeLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationCAShapeLayer.h; sourceTree = "<group>"; };
+		B181AD381BBD3915001A1E9B /* NavigationCAShapeLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationCAShapeLayer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +94,7 @@
 			children = (
 				B181AD031BBD2748001A1E9B /* AppDelegate.h */,
 				B181AD041BBD2748001A1E9B /* AppDelegate.m */,
+				B181AD361BBD38C3001A1E9B /* Navigation helper */,
 				B181AD2C1BBD2B66001A1E9B /* Download manager */,
 				B181AD281BBD2AC6001A1E9B /* View controllers */,
 				B181AD291BBD2ACE001A1E9B /* Interface */,
@@ -170,6 +174,15 @@
 				B181AD2E1BBD2BBC001A1E9B /* DownloadManager.m */,
 			);
 			name = "Download manager";
+			sourceTree = "<group>";
+		};
+		B181AD361BBD38C3001A1E9B /* Navigation helper */ = {
+			isa = PBXGroup;
+			children = (
+				B181AD371BBD3915001A1E9B /* NavigationCAShapeLayer.h */,
+				B181AD381BBD3915001A1E9B /* NavigationCAShapeLayer.m */,
+			);
+			name = "Navigation helper";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,6 +290,7 @@
 				B181AD051BBD2748001A1E9B /* AppDelegate.m in Sources */,
 				B181AD0B1BBD2748001A1E9B /* TreasureMapViewController.m in Sources */,
 				B181AD2F1BBD2BBC001A1E9B /* DownloadManager.m in Sources */,
+				B181AD391BBD3915001A1E9B /* NavigationCAShapeLayer.m in Sources */,
 				B181AD021BBD2748001A1E9B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

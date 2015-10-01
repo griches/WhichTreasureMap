@@ -21,52 +21,52 @@
 @implementation DownloadManager
 
 #pragma mark - Download methods -
-- (void)downloadAndParseListOfDirections {
+- (void)downloadAndParseListOfDirectionsWithCompletion:(void (^)(BOOL success, NSArray *directionCoreDataObjects))completionBlock {
     
     NSURL *url = [NSURL URLWithString:dataPath];
-    
+
     NSURLSessionDataTask *downloadDataTask = [[NSURLSession sharedSession]
                                               dataTaskWithURL:url
                                               completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
                                                   
                                                   if (error) {
                                                       
-                                                    // For the purposes of the demo I will not display any error, just demonstrate that there is a condition to check for it
-                                                    NSLog(@"%@", [error localizedDescription]);
+                                                      // For the purposes of the demo I will not display any error, just demonstrate that there is a condition to check for it
+                                                      NSLog(@"%@", [error localizedDescription]);
+                                                      
+                                                      completionBlock(NO, nil);
                                                   } else {
                                                       
-                                                      if (error) {
-                                                          NSLog(@"JSON issue. Check JSON validity: %@", [error localizedDescription]);
-
-                                                      } else {
+                                                      // Parse and store in to core data
+                                                      NSDictionary *jsonDictionary = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+                                                      NSArray *directions = jsonDictionary[@"directions"];
+                                                      NSMutableArray *directionCoreDataObjects = [NSMutableArray array];
+                                                      
+                                                      // Loop through array and create core data entires
+                                                      NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Direction" inManagedObjectContext:self.appDelegate.managedObjectContext];
+                                                      
+                                                      for (NSUInteger i = 0; i < directions.count; i++) {
                                                           
-                                                          // Parse and store in to core data
-                                                          NSDictionary *jsonDictionary = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
-                                                          NSArray *directions = jsonDictionary[@"directions"];
+                                                          DirectionManagedObjectContext *newDirection = [[DirectionManagedObjectContext alloc] initWithEntity:entityDescription insertIntoManagedObjectContext:self.appDelegate.managedObjectContext];
                                                           
-                                                          // Loop through array and create core data entires
-                                                          NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Direction" inManagedObjectContext:self.appDelegate.managedObjectContext];
+                                                          // Get the parsed dictionary
+                                                          NSString *direction = directions[i];
                                                           
-                                                          for (NSUInteger i = 0; i < directions.count; i++) {
-                                                              
-                                                              DirectionManagedObjectContext *newDirection = [[DirectionManagedObjectContext alloc] initWithEntity:entityDescription insertIntoManagedObjectContext:self.appDelegate.managedObjectContext];
-                                                              
-                                                              // Get the parsed dictionary
-                                                              NSString *direction = directions[i];
-                                                              
-                                                              newDirection.index = [NSNumber numberWithUnsignedInteger:i];
-                                                              newDirection.direction = direction;
-                                                          }
+                                                          newDirection.index = [NSNumber numberWithUnsignedInteger:i];
+                                                          newDirection.direction = direction;
                                                           
-                                                          NSError *error = nil;
-                                                          
-                                                          if (![self.appDelegate.managedObjectContext save:&error]) {
-                                                              NSLog(@"Unable to save managed object context.");
-                                                              NSLog(@"%@, %@", error, error.localizedDescription);
-                                                          }
-                                                          
-                                                          // Return the values to the completion block
+                                                          [directionCoreDataObjects addObject:newDirection];
                                                       }
+                                                      
+                                                      NSError *error = nil;
+                                                      
+                                                      if (![self.appDelegate.managedObjectContext save:&error]) {
+                                                          NSLog(@"Unable to save managed object context.");
+                                                          NSLog(@"%@, %@", error, error.localizedDescription);
+                                                      }
+                                                      
+                                                      // Return the values to the completion block
+                                                      completionBlock(YES, directionCoreDataObjects);
                                                   }
                                               }];
     

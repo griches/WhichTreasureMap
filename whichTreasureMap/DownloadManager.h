@@ -10,6 +10,6 @@
 
 @interface DownloadManager : NSObject
 
-- (void)downloadAndParseListOfDirections;
+- (void)downloadAndParseListOfDirectionsWithCompletion:(void (^)(BOOL success, NSArray *directionCoreDataObjects))completionBlock;
 
 @end

@@ -10,6 +10,9 @@
 #import "DownloadManager.h"
 #import "DirectionManagedObjectContext.h"
 #import "AppDelegate.h"
+#import "NavigationCAShapeLayer.h"
+
+#define movementUnit
 
 @interface TreasureMapViewController ()
 
@@ -54,19 +57,25 @@
     self.appDelegate = [UIApplication sharedApplication].delegate;
     
     // Get the cached data
-    NSArray *cachedData = [self resultsFromCoreData];
+    NSArray *cachedDirections = [self resultsFromCoreData];
     
     // Download the directions if required
-    if (cachedData == nil) {
+    if (cachedDirections == nil) {
+        
         DownloadManager *downloadManager = [[DownloadManager alloc] init];
-        [downloadManager downloadAndParseListOfDirections];
+        [downloadManager downloadAndParseListOfDirectionsWithCompletion:^(BOOL success, NSArray *downloadedDirections) {
+           
+            // Draw the dotted line onthe main thread
+            dispatch_async(dispatch_get_main_queue(), ^{
+                CAShapeLayer *shapeLayer = [[NavigationCAShapeLayer alloc] initWithDirections:downloadedDirections];
+                [self.view.layer addSublayer:shapeLayer];
+            });
+        }];
     } else {
-     
-        // Display the cached navigation directions
-        for (NSUInteger i = 0; i < cachedData.count; i++) {
-            DirectionManagedObjectContext *cachedDirection = cachedData[i];
-            NSLog(@"%@", cachedDirection.direction);
-        }
+        
+        // Draw the dotted line
+        CAShapeLayer *shapeLayer = [[NavigationCAShapeLayer alloc] initWithDirections:cachedDirections];
+        [self.view.layer addSublayer:shapeLayer];
     }
 }
 
