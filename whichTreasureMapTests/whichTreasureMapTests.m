@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 #import "NavigationCAShapeLayer.h"
+#import "DownloadManager.h"
 
 @interface whichTreasureMapTests : XCTestCase
 
@@ -39,6 +40,28 @@
     } else {
         XCTAssert(NO, @"Fail");
     }
+}
+
+- (void)testServerResponse {
+    
+    XCTestExpectation *expectation = [self expectationWithDescription:@"Download"];
+    
+    DownloadManager *downloadManager = [[DownloadManager alloc] init];
+    [downloadManager downloadAndParseListOfDirectionsWithCompletion:^(BOOL success, NSArray *downloadedDirections) {
+        
+        if (success) {
+            XCTAssert(YES, @"Pass");
+            
+            [expectation fulfill];
+            
+        }
+    }];
+    
+    [self waitForExpectationsWithTimeout:5.0 handler:^(NSError *error) {
+        if (error) {
+            NSLog(@"Timeout Error: %@", error);
+        }
+    }];
 }
 
 // Check that our path code isn't too slow with large data sets

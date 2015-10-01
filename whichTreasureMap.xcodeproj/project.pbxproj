@@ -20,6 +20,7 @@
 		B181AD391BBD3915001A1E9B /* NavigationCAShapeLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B181AD381BBD3915001A1E9B /* NavigationCAShapeLayer.m */; };
 		B181AD3D1BBD5442001A1E9B /* NavigationCAShapeLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B181AD381BBD3915001A1E9B /* NavigationCAShapeLayer.m */; };
 		B181AD3E1BBD5496001A1E9B /* DirectionManagedObjectContext.m in Sources */ = {isa = PBXBuildFile; fileRef = B181AD341BBD3021001A1E9B /* DirectionManagedObjectContext.m */; };
+		B181AD3F1BBD68DC001A1E9B /* DownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B181AD2E1BBD2BBC001A1E9B /* DownloadManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -306,6 +307,7 @@
 				B181AD3E1BBD5496001A1E9B /* DirectionManagedObjectContext.m in Sources */,
 				B181AD1F1BBD2748001A1E9B /* whichTreasureMapTests.m in Sources */,
 				B181AD3D1BBD5442001A1E9B /* NavigationCAShapeLayer.m in Sources */,
+				B181AD3F1BBD68DC001A1E9B /* DownloadManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
