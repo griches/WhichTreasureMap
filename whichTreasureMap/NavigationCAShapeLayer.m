@@ -8,7 +8,6 @@
 
 #import "NavigationCAShapeLayer.h"
 #import <UIKit/UIKit.h>
-#import "DirectionManagedObjectContext.h"
 #import "Defines.h"
 
 @implementation NavigationCAShapeLayer
@@ -39,10 +38,8 @@
         // Build the path to draw to
         for (NSUInteger i = 0; i < directions.count; i++) {
             
-            DirectionManagedObjectContext *directionManagedObjectContext = directions[i];
-            
             // Is the command forward or a turn?
-            if ([directionManagedObjectContext.direction isEqualToString:kForward]) {
+            if ([directions[i] isEqualToString:kForward]) {
                 
                 if ([currentDirection isEqualToString:kNorth]) {
                     posY -= unit;
@@ -58,27 +55,27 @@
             } else {
              
                 if ([currentDirection isEqualToString:kNorth]) {
-                    if ([directionManagedObjectContext.direction isEqualToString:kLeft]) {
+                    if ([directions[i] isEqualToString:kLeft]) {
                         currentDirection = kWest;
-                    } else if ([directionManagedObjectContext.direction isEqualToString:kRight]) {
+                    } else if ([directions[i] isEqualToString:kRight]) {
                         currentDirection = kEast;
                     }
                 } else if ([currentDirection isEqualToString:kSouth]) {
-                    if ([directionManagedObjectContext.direction isEqualToString:kLeft]) {
+                    if ([directions[i] isEqualToString:kLeft]) {
                         currentDirection = kEast;
-                    } else if ([directionManagedObjectContext.direction isEqualToString:kRight]) {
+                    } else if ([directions[i] isEqualToString:kRight]) {
                         currentDirection = kWest;
                     }
                 } else if ([currentDirection isEqualToString:kEast]) {
-                    if ([directionManagedObjectContext.direction isEqualToString:kLeft]) {
+                    if ([directions[i] isEqualToString:kLeft]) {
                         currentDirection = kNorth;
-                    } else if ([directionManagedObjectContext.direction isEqualToString:kRight]) {
+                    } else if ([directions[i] isEqualToString:kRight]) {
                         currentDirection = kSouth;
                     }
                 } else if ([currentDirection isEqualToString:kWest]) {
-                    if ([directionManagedObjectContext.direction isEqualToString:kLeft]) {
+                    if ([directions[i] isEqualToString:kLeft]) {
                         currentDirection = kSouth;
-                    } else if ([directionManagedObjectContext.direction isEqualToString:kRight]) {
+                    } else if ([directions[i] isEqualToString:kRight]) {
                         currentDirection = kNorth;
                     }
                 }

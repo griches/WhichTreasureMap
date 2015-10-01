@@ -36,7 +36,7 @@
 }
 
 #pragma mark - CoreData methods -
-- (NSArray *)resultsFromCoreData {
+- (NSMutableArray *)resultsFromCoreData {
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     
@@ -56,7 +56,16 @@
     } else {
         
         if (result.count) {
-            return result;
+            
+            // Convert from core data entris to straight string so we can use tests easily
+            NSMutableArray *directions = [NSMutableArray array];
+            for (NSUInteger i = 0; i < result.count; i++) {
+                
+                DirectionManagedObjectContext *directionManagedObjectContext = result[i];
+                [directions addObject:directionManagedObjectContext.direction];
+            }
+            
+            return directions;
         }
     }
     
