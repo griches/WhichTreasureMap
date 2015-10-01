@@ -66,7 +66,7 @@
                                                       }
                                                       
                                                       // Return the values to the completion block
-                                                      completionBlock(YES, directionCoreDataObjects);
+                                                      completionBlock(YES, directions);
                                                   }
                                               }];
     
