@@ -10,6 +10,6 @@
 
 @interface NavigationCAShapeLayer : CAShapeLayer
 
-- (instancetype)initWithDirections:(NSArray *)directions;
+- (instancetype)initWithDirections:(NSArray *)directions andFinalPoint:(CGPoint *)finalDestination;
 
 @end

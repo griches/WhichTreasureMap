@@ -51,6 +51,7 @@
 		B181AD341BBD3021001A1E9B /* DirectionManagedObjectContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DirectionManagedObjectContext.m; sourceTree = "<group>"; };
 		B181AD371BBD3915001A1E9B /* NavigationCAShapeLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationCAShapeLayer.h; sourceTree = "<group>"; };
 		B181AD381BBD3915001A1E9B /* NavigationCAShapeLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationCAShapeLayer.m; sourceTree = "<group>"; };
+		B181AD3A1BBD50D3001A1E9B /* Defines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Defines.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +95,7 @@
 			children = (
 				B181AD031BBD2748001A1E9B /* AppDelegate.h */,
 				B181AD041BBD2748001A1E9B /* AppDelegate.m */,
+				B181AD3A1BBD50D3001A1E9B /* Defines.h */,
 				B181AD361BBD38C3001A1E9B /* Navigation helper */,
 				B181AD2C1BBD2B66001A1E9B /* Download manager */,
 				B181AD281BBD2AC6001A1E9B /* View controllers */,

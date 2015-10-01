@@ -2,6 +2,9 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Treasure Map View Controller-->
@@ -15,11 +18,43 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map" translatesAutoresizingMaskIntoConstraints="NO" id="RSU-cG-jaQ">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location" translatesAutoresizingMaskIntoConstraints="NO" id="PTk-DX-0HW">
+                                <rect key="frame" x="15" y="499" width="88" height="17"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="RSU-cG-jaQ" secondAttribute="trailing" id="LmP-Hz-qTY"/>
+                            <constraint firstItem="RSU-cG-jaQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="MJR-wn-hjd"/>
+                            <constraint firstItem="PTk-DX-0HW" firstAttribute="centerXWithinMargins" secondItem="RSU-cG-jaQ" secondAttribute="leading" id="MrI-YM-JoM"/>
+                            <constraint firstItem="PTk-DX-0HW" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="63" id="Y3X-hf-tqz"/>
+                            <constraint firstItem="RSU-cG-jaQ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="YeD-oT-xep"/>
+                            <constraint firstItem="PTk-DX-0HW" firstAttribute="leading" secondItem="RSU-cG-jaQ" secondAttribute="leading" id="b4N-oA-UzN"/>
+                            <constraint firstItem="RSU-cG-jaQ" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="bru-UG-n02"/>
+                            <constraint firstItem="PTk-DX-0HW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-1" id="chn-cA-2GR"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" relation="greaterThanOrEqual" secondItem="PTk-DX-0HW" secondAttribute="bottom" constant="107" id="hCc-Pk-0tO"/>
+                            <constraint firstItem="PTk-DX-0HW" firstAttribute="bottom" secondItem="RSU-cG-jaQ" secondAttribute="bottom" multiplier="0.86" id="slc-2o-kQ9"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="MrI-YM-JoM"/>
+                                <exclude reference="Y3X-hf-tqz"/>
+                                <exclude reference="b4N-oA-UzN"/>
+                                <exclude reference="hCc-Pk-0tO"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="location" width="88" height="17"/>
+        <image name="map" width="320" height="569"/>
+    </resources>
 </document>
