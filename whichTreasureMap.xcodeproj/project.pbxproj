@@ -15,6 +15,8 @@
 		B181AD101BBD2748001A1E9B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B181AD0F1BBD2748001A1E9B /* Images.xcassets */; };
 		B181AD131BBD2748001A1E9B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B181AD111BBD2748001A1E9B /* LaunchScreen.xib */; };
 		B181AD1F1BBD2748001A1E9B /* whichTreasureMapTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B181AD1E1BBD2748001A1E9B /* whichTreasureMapTests.m */; };
+		B181AD2F1BBD2BBC001A1E9B /* DownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B181AD2E1BBD2BBC001A1E9B /* DownloadManager.m */; };
+		B181AD351BBD3021001A1E9B /* DirectionManagedObjectContext.m in Sources */ = {isa = PBXBuildFile; fileRef = B181AD341BBD3021001A1E9B /* DirectionManagedObjectContext.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,10 @@
 		B181AD181BBD2748001A1E9B /* whichTreasureMapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = whichTreasureMapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B181AD1D1BBD2748001A1E9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B181AD1E1BBD2748001A1E9B /* whichTreasureMapTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = whichTreasureMapTests.m; sourceTree = "<group>"; };
+		B181AD2D1BBD2BBC001A1E9B /* DownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadManager.h; sourceTree = "<group>"; };
+		B181AD2E1BBD2BBC001A1E9B /* DownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadManager.m; sourceTree = "<group>"; };
+		B181AD331BBD3021001A1E9B /* DirectionManagedObjectContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectionManagedObjectContext.h; sourceTree = "<group>"; };
+		B181AD341BBD3021001A1E9B /* DirectionManagedObjectContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DirectionManagedObjectContext.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +157,8 @@
 			isa = PBXGroup;
 			children = (
 				B181AD061BBD2748001A1E9B /* whichTreasureMap.xcdatamodeld */,
+				B181AD331BBD3021001A1E9B /* DirectionManagedObjectContext.h */,
+				B181AD341BBD3021001A1E9B /* DirectionManagedObjectContext.m */,
 			);
 			name = CoreData;
 			sourceTree = "<group>";
@@ -158,6 +166,8 @@
 		B181AD2C1BBD2B66001A1E9B /* Download manager */ = {
 			isa = PBXGroup;
 			children = (
+				B181AD2D1BBD2BBC001A1E9B /* DownloadManager.h */,
+				B181AD2E1BBD2BBC001A1E9B /* DownloadManager.m */,
 			);
 			name = "Download manager";
 			sourceTree = "<group>";
@@ -262,9 +272,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B181AD351BBD3021001A1E9B /* DirectionManagedObjectContext.m in Sources */,
 				B181AD081BBD2748001A1E9B /* whichTreasureMap.xcdatamodeld in Sources */,
 				B181AD051BBD2748001A1E9B /* AppDelegate.m in Sources */,
 				B181AD0B1BBD2748001A1E9B /* TreasureMapViewController.m in Sources */,
+				B181AD2F1BBD2BBC001A1E9B /* DownloadManager.m in Sources */,
 				B181AD021BBD2748001A1E9B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
