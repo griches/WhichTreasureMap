@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
+#import "NavigationCAShapeLayer.h"
 
 @interface whichTreasureMapTests : XCTestCase
 
@@ -25,15 +26,26 @@
     [super tearDown];
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    XCTAssert(YES, @"Pass");
+- (void)testPathGeneration {
+    
+    CGPoint finalDestination = CGPointZero;
+    
+    (void)[[NavigationCAShapeLayer alloc] initWithDirections:@[@"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward"] andFinalPoint:&finalDestination];
+    
+    if (finalDestination.x != 0 && finalDestination.y != 0) {
+        XCTAssert(YES, @"Pass");
+    } else {
+        XCTAssert(NO, @"Fail");
+    }
 }
 
+// Check that our path code isn't too slow with large data sets
 - (void)testPerformanceExample {
     // This is an example of a performance test case.
     [self measureBlock:^{
-        // Put the code you want to measure the time of here.
+        CGPoint finalDestination = CGPointZero;
+        
+        (void)[[NavigationCAShapeLayer alloc] initWithDirections:@[@"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward", @"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward"] andFinalPoint:&finalDestination];
     }];
 }
 
