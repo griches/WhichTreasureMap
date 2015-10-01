@@ -16,6 +16,8 @@
 
 @implementation whichTreasureMapTests
 
+
+
 - (void)setUp {
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -32,7 +34,7 @@
     
     (void)[[NavigationCAShapeLayer alloc] initWithDirections:@[@"forward", @"left", @"left", @"forward", @"forward", @"right", @"forward"] andFinalPoint:&finalDestination];
     
-    if (finalDestination.x != 0 && finalDestination.y != 0) {
+    if (finalDestination.x == -10 && finalDestination.y == 10) {
         XCTAssert(YES, @"Pass");
     } else {
         XCTAssert(NO, @"Fail");

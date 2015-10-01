@@ -29,9 +29,18 @@
         // A unit for measurement will be N% width of the screen
         float unit = frame.size.width * 0.12f;
         
+        if ([[[NSProcessInfo processInfo] arguments] containsObject:@"-BBGTesting"]) {
+            unit = 10;
+        }
+        
         // Make the starting point
         float posY = frame.size.height * 0.84f;
         float posX = frame.size.width * 0.10f;
+        
+        if ([[[NSProcessInfo processInfo] arguments] containsObject:@"-BBGTesting"]) {
+            posY = 0.0f;
+            posX = 0.0f;
+        }
         
         [path moveToPoint:CGPointMake(posX, posY)];
 
@@ -98,6 +107,13 @@
         [self addAnimation:pathAnimation forKey:@"strokeEndAnimation"];
     }
     return self;
+}
+
+- (BOOL)isRunningUnitTests {
+    NSString *XPCServiceName = [NSProcessInfo processInfo].environment[@"XPC_SERVICE_NAME"];
+    BOOL isTesting = ([XPCServiceName rangeOfString:@"xctest"].location != NSNotFound);
+    
+    return isTesting;
 }
 
 @end
